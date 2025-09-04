@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.game-tips {
+    margin-bottom: 15px;
+}
+
+.game-tip {
+    background-color: #FFF9C4;
+    color: #F57F17;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    animation: pulse 2s infinite;
+}
+
+.obstacle-tip {
+    background-color: #FFEBEE;
+    color: #B71C1C;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.score-container, .high-score-container {
+    /* padding: 5px;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    text-align: center; */
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    text-align: center;
+}
+
+#score, #highScore {
+    font-weight: bold;
+}
+
+.canvas-container {
+    margin: 0 auto;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    width: 300px;
+    height: 300px;
+}
+
+#gameCanvas {
+    display: block;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #388E3C;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#pauseBtn {
+    background-color: #FFC107;
+}
+
+.game-instructions {
+    margin-top: 30px;
+    text-align: left;
+    border-top: 2px dashed #4CAF50;
+    padding-top: 20px;
+}
+
+.game-instructions h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.game-instructions h3 {
+    color: #388E3C;
+    margin: 15px 0 8px;
+    font-size: 18px;
+    border-left: 4px solid #4CAF50;
+    padding-left: 10px;
+}
+
+.instruction-content {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.instruction-content ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.instruction-content li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+#pauseBtn:hover {
+    background-color: #FFA000;
+}
+
+#restartBtn {
+    background-color: #F44336;
+}
+
+#restartBtn:hover {
+    background-color: #D32F2F;
+}
+
+/* 移动控制按钮样式 */
+.mobile-controls {
+    margin-top: 20px;
+    display: none; /* 默认隐藏，在小屏幕上显示 */
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.control-row-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.mobile-controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+/* 速度状态指示器 */
+.speed-status-container, .difficulty-container {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e8f5e9;
+    text-align: center;
+}
+
+#speedStatus {
+    font-weight: bold;
+}
+
+#difficultySelect {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #4CAF50;
+    background-color: white;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+#difficultySelect:hover {
+    border-color: #388E3C;
+}
+
+#difficultySelect option {
+    font-weight: normal;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .canvas-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    #gameCanvas {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .mobile-controls {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .canvas-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    #gameCanvas {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .controls button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

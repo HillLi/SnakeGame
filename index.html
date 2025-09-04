@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+    <h1>贪吃蛇游戏</h1>
+    <div class="game-tips">
+        <p class="game-tip">提示：长按方向键可以加速移动！</p>
+        <p class="game-tip obstacle-tip">注意：避开棕色障碍物，否则游戏结束！</p>
+    </div>
+        
+        <div class="game-info">
+            <div class="score-container">
+                <span>分数: </span>
+                <span id="score">0</span>
+            </div>
+            <div class="high-score-container">
+                <span>最高分: </span>
+                <span id="highScore">0</span>
+            </div>
+            <div class="speed-status-container">
+                <span>状态: </span>
+                <span id="speedStatus">正常</span>
+            </div>
+            <div class="difficulty-container">
+                <span>难度: </span>
+                <select id="difficultySelect">
+                    <option value="easy">简单</option>
+                    <option value="medium" selected>中等</option>
+                    <option value="hard">困难</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="300" height="300"></canvas>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn">开始游戏</button>
+            <button id="pauseBtn">暂停</button>
+            <button id="restartBtn">重新开始</button>
+        </div>
+        
+        <div class="mobile-controls">
+            <div class="control-row-horizontal">
+                <button id="leftBtn">←</button>
+                <button id="upBtn">↑</button>
+                <button id="downBtn">↓</button>
+                <button id="rightBtn">→</button>
+            </div>
+        </div>
+        
+        <div class="game-instructions">
+            <h2>游戏说明</h2>
+            <div class="instruction-content">
+                <h3>基本规则</h3>
+                <ul>
+                    <li>使用方向键或屏幕按钮控制蛇的移动方向</li>
+                    <li>吃到食物（绿色方块）可以增加分数和蛇的长度</li>
+                    <li>撞到墙壁、自身或障碍物（棕色方块）会导致游戏结束</li>
+                </ul>
+                
+                <h3>难度设置</h3>
+                <ul>
+                    <li><strong>简单</strong>：速度较慢，障碍物较少，每次吃到食物增加1格长度</li>
+                    <li><strong>中等</strong>：速度适中，障碍物适量，每次吃到食物增加2格长度</li>
+                    <li><strong>困难</strong>：速度较快，障碍物较多，每次吃到食物增加3格长度</li>
+                </ul>
+                
+                <h3>特殊操作</h3>
+                <ul>
+                    <li>长按方向键或触摸屏按钮可以临时加速</li>
+                    <li>游戏过程中可以暂停，但不能更改难度</li>
+                    <li>只有在游戏未开始或已结束时才能更改难度</li>
+                </ul>
+                
+                <h3>障碍物系统</h3>
+                <ul>
+                    <li>游戏中的棕色方块为障碍物，碰到会导致游戏结束</li>
+                    <li>不同难度下障碍物数量不同</li>
+                    <li>每次重新开始游戏，障碍物位置会随机变化</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
